@@ -53,7 +53,7 @@ class PAXCountdown(commands.Cog):
     def __init__(self, bot):
         logging.info('[PAX Countdown] Loading cog')
         self.bot = bot
-        self.config = Config.get_conf(self, identifier='pax_countdown')
+        self.config = Config.get_conf(self, identifier='paxcountdown')
         self.config.register_global({
             'tracked_event': None,
             'admin_role': None
@@ -66,7 +66,7 @@ class PAXCountdown(commands.Cog):
         if tracked_event:
             existing_event = datetime.datetime.strptime(tracked_event['date'], dateFmt)
             existing_event = eventTzs[tracked_event['name']].localize(existing_event.replace(hour=eventStart[tracked_event['name']].hour, minute=eventStart[tracked_event['name']].minute))
-            datediff = resolve_secs(existing_event - datetime.datetime.now(tz=eventTzs[tracked_event['name']]), _time=True)
+            datediff = self.resolve_secs(existing_event - datetime.datetime.now(tz=eventTzs[tracked_event['name']]), _time=True)
 
             if datediff >= 0: # Event is set to a future date
                 logging.info(f'[PAX Countdown] Found previously set countdown for {tracked_event["name"]}, restoring')
@@ -75,10 +75,10 @@ class PAXCountdown(commands.Cog):
                 self.incrementation_check.start() #pylint: disable=no-member
 
             else: # Event is either on-going, or completely over. Check which
-                start = eventStart[tracked_event['name']
-                end = eventEnd[tracked_event['name']
-                lastDay = eventLastDay[tracked_event['name']
-                length = eventDays[tracked_event['name']
+                start = eventStart[tracked_event['name']]
+                end = eventEnd[tracked_event['name']]
+                lastDay = eventLastDay[tracked_event['name']]
+                length = eventDays[tracked_event['name']]
                 oneDaySeconds = ((end.hour * 60 * 60) + end.minute * 60 + end.second) - ((start.hour * 60 * 60) + start.minute * 60 + start.second)
                 eventSeconds = (oneDaySeconds * (length - 1) + ((lastDay.hour - start.hour) * 60 * 60) + (lastDay.minute - start.minute) * 60)
 
