@@ -2,7 +2,7 @@ import asyncio
 
 import datetime
 from pytz import timezone
-from discord.ext import commands, tasks
+from redbot.core import commands, tasks
 
 # These constants can be moved to a
 # settings file and that file can instead
