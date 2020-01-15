@@ -66,7 +66,7 @@ class PAXCountdown(commands.Cog):
         if tracked_event:
             existing_event = datetime.datetime.strptime(tracked_event['date'], dateFmt)
             existing_event = eventTzs[tracked_event['name']].localize(existing_event.replace(hour=eventStart[tracked_event['name']].hour, minute=eventStart[tracked_event['name']].minute))
-            datediff = resolve_secs(existing_event - datetime.datetime.now(tz=eventTzs[tracked_event['name']), _time=True)
+            datediff = resolve_secs(existing_event - datetime.datetime.now(tz=eventTzs[tracked_event['name']]), _time=True)
 
             if datediff >= 0: # Event is set to a future date
                 logging.info(f'[PAX Countdown] Found previously set countdown for {tracked_event["name"]}, restoring')
