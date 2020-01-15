@@ -18,21 +18,21 @@ eventTzs = {
     'aus': timezone('Australia/Melbourne')
 }
 eventDays = {
-    'east': 2,
+    'east': 4,
     'west': 4,
     'south': 3,
     'unplugged': 3,
     'aus': 3
 }
 eventStart = {
-    'east': datetime.time(hour=20, minute=0, tzinfo=eventTzs['east']),
+    'east': datetime.time(hour=10, minute=0, tzinfo=eventTzs['east']),
     'west': datetime.time(hour=9, minute=30, tzinfo=eventTzs['west']),
     'south': datetime.time(hour=10, tzinfo=eventTzs['south']),
     'unplugged': datetime.time(hour=10, tzinfo=eventTzs['unplugged']),
     'aus': datetime.time(hour=10, tzinfo=eventTzs['aus'])
 }
 eventEnd = {
-    'east': datetime.time(hour=21, minute=59, second=59, tzinfo=eventTzs['east']),
+    'east': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['east']),
     'west': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['west']),
     'south': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['south']),
     'unplugged': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['unplugged']),
