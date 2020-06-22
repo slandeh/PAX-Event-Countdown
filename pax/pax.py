@@ -252,7 +252,7 @@ class PAXCountdown(commands.Cog):
     async def _set_event(self, ctx, event, *, date):
         if self.countdownEvent: # Stop the current task loop
             self.incrementation_check.clear_exception_types() #pylint: disable=no-member
-            self.incrementation_check.stop() #pylint: disable=no-member
+            self.incrementation_check.cancel() #pylint: disable=no-member
 
         if not await self.config.voice_channel():
             return await ctx.send(f'No channel has been set for the countdown timer. Please use the `{ctx.clean_prefix}pax channel [channel]` command to set one. Channel should be an ID')
