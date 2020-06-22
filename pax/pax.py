@@ -236,6 +236,23 @@ class PAXCountdown(commands.Cog):
         return await ctx.send(f'Successfully set `{bot_channel.name}` as the countdown channel')
 
     @checks.mod()
+    @_pax.command(name='stop')
+    async def _stop_event(self, ctx):
+        if not self.countdownEvent:
+            return await ctx.send('Not currently tracking any event, no changes have been made')
+
+        event = self.countdownEvent
+
+        self.incrementation_check.clear_exception_types() #pylint: disable=no-member
+        self.incrementation_check.cancel() #pylint: disable=no-member
+        self.countdownEvent = None
+        self.countdownDate = None
+        await self.config.tracked_event.set(None)
+        await self.bot.get_channel(self.headerCategory).edit(name='See you next time')
+
+        return await ctx.send(f'Successfully stopped tracking pax {event}')
+
+    @checks.mod()
     @_pax.command(name='event')
     async def _set_event(self, ctx, event, *, date):
         if self.countdownEvent: # Stop the current task loop
