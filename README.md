@@ -5,3 +5,4 @@ A [red-discord bot](https://github.com/Cog-Creators/Red-DiscordBot) cog that all
 `[p]` Stands for prefix of your red instance.
 * `[p]pax event [event] [yyyy-mm-dd]` - Event from list of "east", "west", "south", "unplugged", "aus". Year format of the starting day
 * `[p]pax channel [channel]` - channel id of countdown channel
+* `[p]pax stop` - Stop tracking the current event
