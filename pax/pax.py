@@ -17,35 +17,40 @@ eventTzs = {
     'west': timezone('America/Los_Angeles'),
     'south': timezone('America/Chicago'),
     'unplugged': timezone('America/New_York'),
-    'aus': timezone('Australia/Melbourne')
+    'aus': timezone('Australia/Melbourne'),
+    'online': timezone('America/Los_Angeles')
 }
 eventDays = {
     'east': 4,
     'west': 4,
     'south': 3,
     'unplugged': 3,
-    'aus': 3
+    'aus': 3,
+    'online': 9
 }
 eventStart = {
     'east': datetime.time(hour=10, minute=0, tzinfo=eventTzs['east']),
     'west': datetime.time(hour=9, minute=30, tzinfo=eventTzs['west']),
     'south': datetime.time(hour=10, tzinfo=eventTzs['south']),
     'unplugged': datetime.time(hour=10, tzinfo=eventTzs['unplugged']),
-    'aus': datetime.time(hour=10, tzinfo=eventTzs['aus'])
+    'aus': datetime.time(hour=10, tzinfo=eventTzs['aus']),
+    'online': datetime.time(hour=0, minute=0, tzinfo=eventTzs['online'])
 }
 eventEnd = {
     'east': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['east']),
     'west': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['west']),
     'south': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['south']),
     'unplugged': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['unplugged']),
-    'aus': datetime.time(hour=23, tzinfo=eventTzs['aus'])
+    'aus': datetime.time(hour=23, tzinfo=eventTzs['aus']),
+    'online': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['online'])
 }
 eventLastDay = {
     'east': datetime.time(hour=19, tzinfo=eventTzs['east']),
     'west': datetime.time(hour=19, tzinfo=eventTzs['west']),
     'south': datetime.time(hour=19, tzinfo=eventTzs['south']),
     'unplugged': datetime.time(hour=19, tzinfo=eventTzs['unplugged']),
-    'aus': datetime.time(hour=19, tzinfo=eventTzs['aus'])
+    'aus': datetime.time(hour=19, tzinfo=eventTzs['aus']),
+    'online': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['online'])
 }
 dateFmt = '%Y-%m-%d'
 LOG_FORMAT = '%(levelname)s [%(asctime)s]: %(message)s'
