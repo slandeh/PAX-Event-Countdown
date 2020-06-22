@@ -146,7 +146,7 @@ class PAXCountdown(commands.Cog):
                     logging.warning(f'[PAX Countdown] Found previously set countdown for {tracked_event["name"]} that is already over, discarding')
                     await self.config.tracked_event.set(None)
 
-    @tasks.loop(seconds=5)
+    @tasks.loop(minutes=5)
     async def incrementation_check(self):
         await self.bot.wait_until_ready()
         if not self.countdownDate: return # No date to count towards, ignore
