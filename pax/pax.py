@@ -114,10 +114,8 @@ class PAXCountdown(commands.Cog):
     async def check_prior_events(self):
         self.headerCategory = await self.config.voice_channel()
         await self.bot.wait_until_ready()
-        print('prior check')
         tracked_event = await self.config.tracked_event()
         if tracked_event:
-            print('tracked event')
             existing_event = datetime.datetime.strptime(tracked_event['date'], dateFmt)
             existing_event = eventTzs[tracked_event['name']].localize(existing_event.replace(hour=eventStart[tracked_event['name']].hour, minute=eventStart[tracked_event['name']].minute))
             datediff = self.resolve_secs(existing_event - datetime.datetime.now(tz=eventTzs[tracked_event['name']]), _time=True)
@@ -157,7 +155,6 @@ class PAXCountdown(commands.Cog):
             if not self.in_hours():
                 return
 
-            #print('event live!')
             start = eventStart[self.countdownEvent]
             end = eventEnd[self.countdownEvent]
             lastDay = eventLastDay[self.countdownEvent]
@@ -220,13 +217,11 @@ class PAXCountdown(commands.Cog):
     @checks.mod()
     @commands.group(name='pax', invoke_without_command=True)
     async def _pax(self, ctx):
-        # Dummy command
         return
 
     @checks.mod()
     @_pax.command(name='channel')
     async def _pax_channel(self, ctx, channel: int):
-        print(channel)
         bot_channel = self.bot.get_channel(channel)
         if not bot_channel: # Invalid channel. Likely not shared server
             return await ctx.send('Unable to set that channel. Make sure to set a channel in a guild I also share')
