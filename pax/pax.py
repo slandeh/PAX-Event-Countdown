@@ -34,7 +34,7 @@ eventStart = {
     'south': datetime.time(hour=10, tzinfo=eventTzs['south']),
     'unplugged': datetime.time(hour=10, tzinfo=eventTzs['unplugged']),
     'aus': datetime.time(hour=10, tzinfo=eventTzs['aus']),
-    'online': datetime.time(hour=0, minute=0, tzinfo=eventTzs['online'])
+    'online': datetime.time(hour=11, minute=30, tzinfo=eventTzs['online'])
 }
 eventEnd = {
     'east': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['east']),
