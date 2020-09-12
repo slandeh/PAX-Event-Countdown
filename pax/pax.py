@@ -50,7 +50,7 @@ eventLastDay = {
     'south': datetime.time(hour=19, tzinfo=eventTzs['south']),
     'unplugged': datetime.time(hour=19, tzinfo=eventTzs['unplugged']),
     'aus': datetime.time(hour=19, tzinfo=eventTzs['aus']),
-    'online': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['online'])
+    'online': datetime.time(hour=19, minute=45 tzinfo=eventTzs['online'])
 }
 dateFmt = '%Y-%m-%d'
 LOG_FORMAT = '%(levelname)s [%(asctime)s]: %(message)s'
