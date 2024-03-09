@@ -45,11 +45,11 @@ eventEnd = {
     'online': datetime.time(hour=23, minute=59, second=59, tzinfo=eventTzs['online'])
 }
 eventLastDay = {
-    'east': datetime.time(hour=19, tzinfo=eventTzs['east']),
-    'west': datetime.time(hour=19, tzinfo=eventTzs['west']),
-    'south': datetime.time(hour=19, tzinfo=eventTzs['south']),
-    'unplugged': datetime.time(hour=19, tzinfo=eventTzs['unplugged']),
-    'aus': datetime.time(hour=19, tzinfo=eventTzs['aus']),
+    'east': datetime.time(hour=18, tzinfo=eventTzs['east']),
+    'west': datetime.time(hour=18, tzinfo=eventTzs['west']),
+    'south': datetime.time(hour=18, tzinfo=eventTzs['south']),
+    'unplugged': datetime.time(hour=18, tzinfo=eventTzs['unplugged']),
+    'aus': datetime.time(hour=18, tzinfo=eventTzs['aus']),
     'online': datetime.time(hour=19, minute=45, tzinfo=eventTzs['online'])
 }
 dateFmt = '%Y-%m-%d'
